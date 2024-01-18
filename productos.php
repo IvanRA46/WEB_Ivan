@@ -1,7 +1,12 @@
 <?php
 require 'C:/xampp/htdocs/WEB_Ivan/database.php';
 require 'C:/xampp/htdocs/WEB_Ivan/config.php';
-echo "<p style='color: white; font-size: 1.3em; background-color: #faa307; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;'>¡Bienvenido, $nombre_usuario! </p>";
+if (isset($_SESSION['nombre_usuario'])) {
+    $nombre_usuario = $_SESSION['nombre_usuario'];
+    echo "<p style='color: white; font-size: 1.3em; background-color: #faa307; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;'>¡Bienvenido, $nombre_usuario! </p>";
+} else {
+    echo "<p style='color: white; font-size: 1.3em; background-color: #faa307; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;'> ¡Bienvenido!</p>";
+}
 $db = new Database();
 $conn = $db->conectar();
 $sql = $conn->prepare("SELECT id, nombre, precio, descripcion FROM productos");
@@ -15,7 +20,7 @@ $resultado = $sql->fetchall(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MusicStore</title>
     <link rel="stylesheet" href="estilos.css">
-    <link rel="icon" href="images/ELements/basket.png" type="image/png">
+    <link rel="icon" href="images/ELements/basket.png" type="image/png">    
 </head>
 <header>
     <nav>
