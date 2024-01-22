@@ -1,7 +1,7 @@
 <?php
-    require 'C:/xampp/htdocs/WEB_Ivan/database.php';
-    require 'C:/xampp/htdocs/WEB_Ivan/config.php';
-    require 'C:/xampp/htdocs/WEB_Ivan/conn.php';
+    require 'database.php';
+    require 'config.php';
+    require 'conn.php';
     $db = new Database();
 $conn = $db->conectar();
 
@@ -193,7 +193,7 @@ if($productos != null){
 </html>
 <?php 
     $html = ob_get_clean();
-    require_once 'C:\xampp\htdocs\WEB_Ivan\dompdf\autoload.inc.php';
+    require_once 'dompdf\autoload.inc.php';
     use Dompdf\Dompdf;
     $dompdf = new Dompdf();
     
@@ -222,9 +222,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require 'C:/xampp/htdocs/WEB_Ivan/phpmailer/src/PHPMailer.php';
-require 'C:/xampp/htdocs/WEB_Ivan/phpmailer/src/SMTP.php';
-require 'C:/xampp/htdocs/WEB_Ivan/phpmailer/src/Exception.php';
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
+require 'phpmailer/src/Exception.php';
 
 $mail = new PHPMailer(true);
 
@@ -251,7 +251,7 @@ $cuerpo = '<h4>Gracias por su compra: '.$nombre_usuario.'</<h4>';
 $mail->Body    = utf8_decode($cuerpo);
 
 // Adjunta el PDF al correo
-$mail->setLanguage('es','C:/xampp/htdocs/WEB_Ivan/phpmailer.lang-es.php');
+$mail->setLanguage('es','phpmailer.lang-es.php');
 
 //Para que no muestre un chorro de texto sobre SMTP
 $mail->SMTPDebug = SMTP::DEBUG_OFF;

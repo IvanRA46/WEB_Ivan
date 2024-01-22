@@ -1,5 +1,5 @@
 <?php
-require 'C:/xampp/htdocs/WEB_Ivan/conn.php';
+require 'conn.php';
 session_start();
 if (isset($_SESSION['nombre_usuario'])) {
     $nombre_usuario = $_SESSION['nombre_usuario'];

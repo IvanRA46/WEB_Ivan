@@ -1,6 +1,6 @@
 <?php
-require 'C:/xampp/htdocs/WEB_Ivan/conn.php';
-require 'C:/xampp/htdocs/WEB_Ivan/config.php';
+require 'conn.php';
+require 'config.php';
 if (isset($_SESSION['nombre_usuario'])) {
     $nombre_usuario = $_SESSION['nombre_usuario'];
     echo "<p style='color: white; font-size: 1.3em; background-color: #faa307; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;'>¡Bienvenido, $nombre_usuario! </p>";

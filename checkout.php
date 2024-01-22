@@ -1,6 +1,6 @@
 <?php
-require 'C:/xampp/htdocs/WEB_Ivan/database.php';
-require 'C:/xampp/htdocs/WEB_Ivan/config.php';
+require 'database.php';
+require 'config.php';
 echo "<p style='color: white; font-size: 1.3em; background-color: #faa307; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;'>¡Bienvenido, $nombre_usuario! </p>";
 $db = new Database();
 $conn = $db->conectar();
@@ -154,7 +154,7 @@ if($productos != null){
 
             function redirigir() {
     // Cambia la URL a la que deseas redirigir
-    window.location.href = 'reportes.php';
+    window.location.href = 'reportes1.php';
   }
 
         </script>

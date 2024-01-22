@@ -1,5 +1,5 @@
 <?php 
-    require 'C:/xampp/htdocs/WEB_Ivan/config.php';
+    require 'config.php';
 
     if(isset($_POST['id'])){
         
